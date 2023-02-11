@@ -19,13 +19,25 @@
         <h1>BUNNY’S LIST</h1>
         <img src="./image/nav.svg" alt="">
     </header>
-        <div class="input_task">
-            <input type="text" class="inp">
-            <button class="btn"> add</button>
+   <div class="container">
+    <div class="input_task">
+        <input type="text" class="inpFind" placeholder="Поиск задачи">
+        <div class="inp_task">
+            <input type="text" class="inp" placeholder="Введите новую задачу">
+            <button class="btn"> 
+            <img src="/image/plus.svg" alt="">
+            </button>
         </div>
-        <ul class="ul"></ul>
-    
-    
+    </div>
+
+    <div class="todo_list">
+        <div class="list-task">
+            <ul class="ul"></ul>
+        </div>
+        <div class="image"></div>
+    </div>
+    </div>
+    <progress max="0" value="0"> </progress>
 
     <script src="js/to.js"></script>
     

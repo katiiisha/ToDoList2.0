@@ -1,52 +1,184 @@
-* {
-    margin: 0;
-}
-
-header {
+body {
+    /*общие настройски*/
     display: flex;
-    padding: 38px 10% 66px 10%;
-    justify-content: space-around;
-    color: #402922;
+    flex-direction: column;
 
-    h1 {
-        font-family: 'Joti One';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 64px;
-        line-height: 85px;
-        letter-spacing: 0.03em;
+    * {
+        margin: 0;
+    }
+
+    /* шапка сайта*/
+    header {
+        display: flex;
+        padding: 38px 10% 66px 10%;
+        justify-content: space-around;
         color: #402922;
-    }
-}
 
-.input_task {
-    display: flex;
-
-    .inp {
-        border: 5px solid #815F34;
-        border-radius: 15px;
-        width: 753px;
-        height: 63px;
-        font-family: 'Jost';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 22px;
-        line-height: 46px;
+        h1 {
+            font-family: 'Joti One';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 64px;
+            line-height: 85px;
+            letter-spacing: 0.03em;
+            color: #402922;
+        }
     }
 
-    .btn {
-        width: 109px;
-        height: 63px;
-        background: #FFFFFF;
-        border: 5px solid #815F34;
-        border-radius: 20px;
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        /* ввод и поиск задач*/
+        .input_task {
+            padding-right: 30px;
+
+            // width: 80vw;
+            align-self: center;
+            justify-content: center;
+
+            .inp,
+            .inpFind {
+                border: 5px solid #815F34;
+                border-radius: 15px;
+                width: 753px;
+                height: 63px;
+                font-family: 'Jost';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 22px;
+                line-height: 46px;
+            }
+
+            .inpFind {
+                margin-bottom: 16px;
+            }
+
+            .inp_task {
+                display: flex;
+
+                .inp {
+                    align-self: center;
+                    // margin-right: 31px;
+                }
+
+                .btn {
+                    align-self: center;
+                    width: 109px;
+                    height: 63px;
+                    background: #FFFFFF;
+                    border: 5px solid #815F34;
+                    border-radius: 20px;
+                    margin-left: 49px;
+
+                }
+            }
+
+
+        }
+
+        /* блок с отображением задач*/
+        .todo_list {
+            display: flex;
+            padding-top: 36px;
+            align-self: center;
+            // width: 80vw;
+            // justify-content: center;
+
+            .list-task {
+                padding: 36px;
+                display: flex;
+                width: 753px;
+                height: 509px;
+                border: 5px solid #815F34;
+                border-radius: 2px;
+                display: flex;
+                overflow: scroll;
+                align-self: center;
+                box-sizing: border-box;
+
+                .ul {
+                    padding-left: 0;
+
+
+                    .li {
+                        list-style-type: none;
+                        display: flex;
+
+                        .inp {
+                            display: inline-block;
+                            width: 427px;
+                            min-height: 75px;
+                            background-color: #F6F6F5;
+                            border-radius: 10px 10px 10px 10px;
+                            border: 0px solid white;
+                            border-left: 15px solid #A13822;
+                            margin: 0 24px 43px 0;
+                            font-family: 'Jost';
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 22px;
+                            padding-left: 9px;
+
+                            &.green {
+                                border-left: 15px solid #01504A;
+                            }
+                        }
+
+
+
+                        .delbtn {
+                            // background: url(/image/delete.svg) no-repeat;
+                            margin-left: 100px;
+                            background-color: #F6F6F5;
+                            width: 75px;
+                            height: 75px;
+                            border: none;
+                            border-radius: 10px;
+                            padding: 15px;
+                        }
+
+
+
+                        .check_input {
+                            position: absolute;
+                            appearance: none;
+                            -webkit-appearance: none;
+                            -webkit-appearance: none;
+
+                        }
+
+                        .check_box {
+                            position: absolute;
+                            width: 75px;
+                            height: 75px;
+                            background: url(/image/check_none.svg);
+                        }
+
+                        .check_input:checked+.check_box {
+                            background: url(/image/check_box.svg);
+                        }
+
+                        .inp+.check_input:checked {
+                            .inp {
+                                border-left: 15px solid #01504A;
+                            }
+
+                        }
+                    }
+                }
+
+            }
+        }
+
     }
-}
 
-.ul {
-    padding-left: 0;
-
-    .li {
-        list-style-type: none;
+    .image {
+        background: url(/image/zastavka.svg);
+        width: 173px;
+        height: 509px;
+        align-self: center;
+        margin-left: 20px;
     }
 }
